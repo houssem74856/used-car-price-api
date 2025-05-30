@@ -21,6 +21,3 @@ def predict(features: CarFeatures):
     data = np.array([[features.transmission, features.mileage, features.fuelType, features.mpg, features.engineSize, features.brand, features.car_age]])
     prediction = model.predict(data)
     return {"prediction": prediction[0]}
-
-from google.colab import files
-files.download('model.txt')
