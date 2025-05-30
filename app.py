@@ -1,6 +1,7 @@
 import lightgbm as lgb
 from fastapi import FastAPI
 from pydantic import BaseModel
+import numpy as np
 
 model = lgb.Booster(model_file='model.txt')
 
