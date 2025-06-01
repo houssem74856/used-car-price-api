@@ -19,7 +19,7 @@ class CarFeatures(BaseModel):
 
 @app.post("/predict")
 def predict(features: CarFeatures):
-    mileage_per_year = features.mileage / (features.car_agefeatures.mileage + 1),
+    mileage_per_year = features.mileage / (features.car_age + 1),
     data = np.array([[features.transmission, features.fuelType, features.mpg, features.engineSize, features.brand, features.car_age, mileage_per_year]])
     prediction = model.predict(data)
     return {"prediction": prediction[0]}
